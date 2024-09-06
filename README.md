@@ -20,6 +20,9 @@ The project consists of two main Python files:
 - `Product`: Represents individual products with attributes like name, price, and stock quantity.
 - `ProductStockManagement`: Manages the collection of products and provides methods for stock operations.
 
+### Requirements
+- Python 3.x
+
 ## How to Use
 1. Run `main.py` to start the application.
 2. Follow the on-screen menu to perform various operations:
