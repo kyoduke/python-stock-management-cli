@@ -1,5 +1,5 @@
 class Product:
-    
+
     def __init__(self, name, price: int, stock: int) -> None:
         self.name = name
         self.price = price
@@ -9,10 +9,11 @@ class Product:
         self.stock += quantity
 
     def remove_from_stock(self, quantity):
-        self.stock -= quantity       
-     
+        self.stock -= quantity
+
     def __str__(self) -> str:
-        return f'{self.name} | R$ {self.price} | {self.stock}'
+        return f"{self.name} | R$ {self.price} | {self.stock}"
+
 
 class ProductStockManagement:
 
@@ -26,6 +27,10 @@ class ProductStockManagement:
         return self.products
 
     def find_and_add_quantity(self, product_name: str, quantity: int):
+        assert isinstance(
+            quantity, int
+        ), "The quantity being added should be an integer value"
+        assert quantity > 0, "The quantity being added should not be less than zero"
         for product in self.products:
             if product.name == product_name:
                 product.stock += quantity
@@ -33,14 +38,9 @@ class ProductStockManagement:
     def find_and_remove_quantity(self, product_name: str, quantity: int):
         for product in self.products:
             if product.name == product_name:
-                product.stock = product.stock - quantity   
+                product.stock = product.stock - quantity
 
     def remove_product(self, product_name: str):
         for product in self.products:
             if product.name == product_name:
                 self.products.remove(product)
-
-    
-
-
-
